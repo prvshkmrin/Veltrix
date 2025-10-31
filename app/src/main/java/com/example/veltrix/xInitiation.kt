@@ -12,46 +12,26 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.veltrix.ui.theme.VeltrixTheme
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
-import androidx.compose.foundation.background
-import androidx.compose.ui.geometry.Offset
 
-
-class whatsappInitiation : ComponentActivity() {
+class xInitiation : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             VeltrixTheme {
-                Scaffold(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(
-                            brush = Brush.linearGradient(
-                                colors = listOf(
-                                    Color(0xFFB2FEFA),
-                                    Color(0xFF0ED2F7)
-                                ),
-                                start = Offset(0f, 0f),
-                                end = Offset(1000f, 1500f)
-                            )
-                        ),
-                    containerColor = Color.Transparent
-                ) { innerPadding ->
-                    Greeting(
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Greeting2(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
         }
-
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting2(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
         modifier = modifier
@@ -60,8 +40,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun GreetingPreview2() {
     VeltrixTheme {
-        Greeting("Android")
+        Greeting2("Android")
     }
 }

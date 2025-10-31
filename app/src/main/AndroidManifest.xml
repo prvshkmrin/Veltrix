@@ -12,15 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Veltrix">
-
-        <!-- internal-only activity (not exported) -->
+        <activity
+            android:name=".instagramInitiation"
+            android:exported="false"
+            android:label="@string/title_activity_instagram_initiation"
+            android:theme="@style/Theme.Veltrix" />
+        <activity
+            android:name=".xInitiation"
+            android:exported="false"
+            android:label="@string/title_activity_xinitiation"
+            android:theme="@style/Theme.Veltrix" />
         <activity
             android:name=".whatsappInitiation"
             android:exported="false"
             android:label="@string/title_activity_whatsapp_initiation"
-            android:theme="@style/Theme.Veltrix" />
-
-        <!-- launcher -->
+            android:theme="@style/Theme.Veltrix" /> <!-- launcher -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -28,9 +34,10 @@
             android:theme="@style/Theme.Veltrix">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
+
 </manifest>
