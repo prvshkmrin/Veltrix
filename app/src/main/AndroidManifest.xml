@@ -13,17 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Veltrix">
         <activity
-            android:name=".instagramInitiation"
+            android:name=".InstagramInitiation"
             android:exported="false"
             android:label="@string/title_activity_instagram_initiation"
             android:theme="@style/Theme.Veltrix" />
         <activity
-            android:name=".xInitiation"
+            android:name=".XInitiation"
             android:exported="false"
             android:label="@string/title_activity_xinitiation"
             android:theme="@style/Theme.Veltrix" />
         <activity
-            android:name=".whatsappInitiation"
+            android:name=".WhatsappInitiation"
             android:exported="false"
             android:label="@string/title_activity_whatsapp_initiation"
             android:theme="@style/Theme.Veltrix" /> <!-- launcher -->

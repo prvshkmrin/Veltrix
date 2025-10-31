@@ -58,15 +58,15 @@ class MainActivity : ComponentActivity() {
                     ) {
                         AppList(
                             onInstagramClick = {
-                                val i = Intent(activity, instagramInitiation::class.java)
+                                val i = Intent(activity, InstagramInitiation::class.java)
                                 activity.startActivity(i)
                             },
                             onTwitterClick = {
-                                val i = Intent(activity, xInitiation::class.java)
+                                val i = Intent(activity, XInitiation::class.java)
                                 activity.startActivity(i)
                             },
                             onWhatsAppClick = {
-                                val i = Intent(activity, whatsappInitiation::class.java)
+                                val i = Intent(activity, WhatsappInitiation::class.java)
                                 activity.startActivity(i)
                             }
                         )
