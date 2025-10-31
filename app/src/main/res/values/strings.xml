@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Veltrix</string>
+    <string name="title_activity_whatsapp_initiation">whatsappInitiation</string>
 </resources>

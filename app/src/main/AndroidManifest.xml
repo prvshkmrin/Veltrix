@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Veltrix">
         <activity
+            android:name=".whatsappInitiation"
+            android:exported="false"
+            android:label="@string/title_activity_whatsapp_initiation"
+            android:theme="@style/Theme.Veltrix" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
