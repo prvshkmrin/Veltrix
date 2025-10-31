@@ -4,12 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.veltrix.ui.theme.VeltrixTheme
 
@@ -20,10 +23,7 @@ class xInitiation : ComponentActivity() {
         setContent {
             VeltrixTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting2(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    ComingSoonScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -31,17 +31,25 @@ class xInitiation : ComponentActivity() {
 }
 
 @Composable
-fun Greeting2(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
+fun ComingSoonScreen(modifier: Modifier = Modifier) {
+    Box(
         modifier = modifier
-    )
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = "Coming Soon",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.SemiBold,
+            color = Color.Gray.copy(alpha = 0.7f) // Slightly faded gray
+        )
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview2() {
+fun ComingSoonPreview() {
     VeltrixTheme {
-        Greeting2("Android")
+        ComingSoonScreen()
     }
 }
