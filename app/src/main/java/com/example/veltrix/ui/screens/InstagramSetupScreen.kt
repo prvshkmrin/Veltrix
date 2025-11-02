@@ -1,4 +1,4 @@
-package com.example.veltrix
+package com.example.veltrix.ui.screens
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

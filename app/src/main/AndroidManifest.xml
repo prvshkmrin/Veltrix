@@ -3,6 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.veltrix">
 
+    <!-- App-level permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Permission for overlay (Show Over Other Apps) -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,21 +20,66 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Veltrix">
+
+        <!-- Accessibility Service: used to interact with WhatsApp UI -->
+        <service
+            android:name=".service.WhatsAppAutomationService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <!-- Reference to the accessibility configuration file -->
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <!-- Notification Listener: to detect incoming WhatsApp messages for auto-reply -->
+        <service
+            android:name=".service.NotificationListener"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <!-- Foreground service (optional, for long-running automation tasks) -->
+        <service
+            android:name=".service.WhatsAppAutomationForegroundService"
+            android:exported="false" />
+
+        <!-- Boot receiver to re-schedule background jobs after restart -->
+        <receiver
+            android:name=".service.BootReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.RESTART" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Activities -->
         <activity
-            android:name=".InstagramInitiation"
+            android:name=".ui.screens.InstagramInitiation"
             android:exported="false"
             android:label="@string/title_activity_instagram_initiation"
             android:theme="@style/Theme.Veltrix" />
         <activity
-            android:name=".XInitiation"
+            android:name=".ui.screens.XInitiation"
             android:exported="false"
             android:label="@string/title_activity_xinitiation"
             android:theme="@style/Theme.Veltrix" />
         <activity
-            android:name=".WhatsappInitiation"
+            android:name=".ui.screens.WhatsappInitiation"
             android:exported="false"
             android:label="@string/title_activity_whatsapp_initiation"
-            android:theme="@style/Theme.Veltrix" /> <!-- launcher -->
+            android:theme="@style/Theme.Veltrix" />
+
+        <!-- Launcher Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -34,10 +87,10 @@
             android:theme="@style/Theme.Veltrix">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

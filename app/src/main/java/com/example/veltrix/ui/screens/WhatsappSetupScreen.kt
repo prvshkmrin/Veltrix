@@ -1,5 +1,6 @@
-package com.example.veltrix
+package com.example.veltrix.ui.screens
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -31,6 +32,7 @@ import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import com.example.veltrix.ui.theme.VeltrixTheme
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import com.example.veltrix.R
 
 class WhatsappInitiation : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -150,7 +152,7 @@ fun WhatsappInitiationScreen() {
 
 @Composable
 fun BottomSheetContent(
-    onItemClick: (String, android.content.Context) -> Unit,
+    onItemClick: (String, Context) -> Unit,
     onCancel: () -> Unit
 ) {
     val context = LocalContext.current

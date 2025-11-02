@@ -21,6 +21,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.veltrix.ui.screens.InstagramInitiation
+import com.example.veltrix.ui.screens.WhatsappInitiation
+import com.example.veltrix.ui.screens.XInitiation
 import com.example.veltrix.ui.theme.VeltrixTheme
 
 class MainActivity : ComponentActivity() {

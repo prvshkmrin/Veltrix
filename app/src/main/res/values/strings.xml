@@ -3,4 +3,5 @@
     <string name="title_activity_whatsapp_initiation">whatsappInitiation</string>
     <string name="title_activity_xinitiation">xInitiation</string>
     <string name="title_activity_instagram_initiation">instagramInitiation</string>
+    <string name="accessibility_service_description">Veltrix accessibility service to interact with WhatsApp UI</string>
 </resources>
