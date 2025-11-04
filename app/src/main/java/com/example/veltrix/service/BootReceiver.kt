@@ -10,5 +10,6 @@ class BootReceiver : BroadcastReceiver() {
         Log.d("BootReceiver", "Device boot completed or restart detected")
         // TODO: re-schedule WorkManager jobs if needed
         // Example: Scheduler.rescheduleAll(context)
+        //newerror
     }
 }
